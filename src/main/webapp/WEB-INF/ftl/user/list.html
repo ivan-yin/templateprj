@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>用户列表</title>
+        <#include "/base/header.html" />
+    </head>
+
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <#list userList as user>
+                        <div class="column">
+                            ${user.name} -- ${user.mobile} -- ${user.sex}
+                        </div>
+                    </#list>
+                    <span class="fa fa-cab"> <i class="fa fa-camera-retro fa-2x"></i> </span>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script>
+
+    </script>
+</html>
