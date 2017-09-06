@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,5 +22,13 @@ public class HelloController {
     public String welcome(String name){
         log.info("welcome {}",name);
         return JSON.toJSONString("welcome " + name);
+    }
+
+    @RequestMapping("ftlwelcome")
+    public String ftl(Model model){
+        String name = "lisi";
+        log.info("welcome {}", name);
+        model.addAttribute("name", name);
+        return "welcome";
     }
 }
